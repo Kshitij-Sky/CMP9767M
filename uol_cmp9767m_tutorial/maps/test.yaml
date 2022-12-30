@@ -1,3 +1,8 @@
+meta:
+  last_updated: 2022-12-29_16-58-36
+metric_map: test
+name: test
+nodes:
 - meta:
     map: test
     node: WayPoint0
@@ -5,16 +10,34 @@
   node:
     edges:
     - action: move_base
-      edge_id: WayPoint0_WayPoint3
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint3
+      action_type: move_base_msgs/MoveBaseGoal
+      config: &id001 []
+      edge_id: WayPoint0_WayPoint1
+      fail_policy: fail
+      fluid_navigation: true
+      goal: &id002
+        target_pose:
+          header:
+            frame_id: $node.parent_frame
+          pose: $node.pose
+      node: WayPoint1
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint0_WayPoint2
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint2
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint0
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -22,28 +45,31 @@
         y: 0.0
         z: 0.0
       position:
-        x: 0.0
-        y: 0.0
+        x: -11.0
+        y: -10.0
         z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
 - meta:
     map: test
     node: WayPoint1
@@ -51,30 +77,30 @@
   node:
     edges:
     - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
       edge_id: WayPoint1_WayPoint0
-      inflation_radius: 0.0
-      map_2d: cropped
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
       node: WayPoint0
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     - action: move_base
-      edge_id: WayPoint1_WayPoint4
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint4
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint1_WayPoint3
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint3
       recovery_behaviours_config: ''
-      top_vel: 0.55
-    - action: move_base
-      edge_id: WayPoint1_WayPoint5
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint5
-      recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint1
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -82,28 +108,305 @@
         y: 0.0
         z: 0.0
       position:
-        x: 5.0
+        x: 11.0
+        y: -10.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint10
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint10_WayPoint11
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint11
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint10_WayPoint8
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint8
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint10_WayPoint12
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint12
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint10
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
         y: 0.0
         z: 0.0
+      position:
+        x: -11.0
+        y: 6.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint11
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint11_WayPoint9
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint9
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint11_WayPoint10
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint10
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint11_WayPoint13
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint13
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint11
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: 11.0
+        y: 6.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint12
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint12_WayPoint13
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint13
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint12_WayPoint10
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint10
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint12
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: -11.0
+        y: 10.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint13
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint13_WayPoint11
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint11
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint13_WayPoint12
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint12
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint13
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: 11.0
+        y: 10.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
 - meta:
     map: test
     node: WayPoint2
@@ -111,30 +414,41 @@
   node:
     edges:
     - action: move_base
-      edge_id: WayPoint2_WayPoint1
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint1
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint2_WayPoint0
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint0
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
       edge_id: WayPoint2_WayPoint3
-      inflation_radius: 0.0
-      map_2d: cropped
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
       node: WayPoint3
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     - action: move_base
-      edge_id: WayPoint2_WayPoint5
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint5
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint2_WayPoint4
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint4
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint2
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -142,28 +456,31 @@
         y: 0.0
         z: 0.0
       position:
-        x: 5.0
-        y: 5.0
+        x: -11.0
+        y: -6.0
         z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
 - meta:
     map: test
     node: WayPoint3
@@ -171,16 +488,41 @@
   node:
     edges:
     - action: move_base
-      edge_id: WayPoint3_WayPoint4
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint4
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint3_WayPoint1
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint1
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint3_WayPoint2
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint2
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint3_WayPoint5
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint5
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint3
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -188,28 +530,31 @@
         y: 0.0
         z: 0.0
       position:
-        x: 0.0
-        y: 5.0
+        x: 11.0
+        y: -6.0
         z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
 - meta:
     map: test
     node: WayPoint4
@@ -217,23 +562,41 @@
   node:
     edges:
     - action: move_base
-      edge_id: WayPoint4_WayPoint0
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint0
-      recovery_behaviours_config: ''
-      top_vel: 0.55
-    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
       edge_id: WayPoint4_WayPoint2
-      inflation_radius: 0.0
-      map_2d: cropped
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
       node: WayPoint2
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint4_WayPoint5
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint5
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint4_WayPoint6
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint6
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint4
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -241,28 +604,31 @@
         y: 0.0
         z: 0.0
       position:
-        x: 2.5
-        y: 2.5
+        x: -11.0
+        y: -3.0
         z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
 - meta:
     map: test
     node: WayPoint5
@@ -270,23 +636,41 @@
   node:
     edges:
     - action: move_base
-      edge_id: WayPoint5_WayPoint1
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint1
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint5_WayPoint3
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint3
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     - action: move_base
-      edge_id: WayPoint5_WayPoint2
-      inflation_radius: 0.0
-      map_2d: cropped
-      node: WayPoint2
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint5_WayPoint4
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint4
       recovery_behaviours_config: ''
-      top_vel: 0.55
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint5_WayPoint7
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint7
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
     localise_by_topic: ''
-    map: test
     name: WayPoint5
-    pointset: test
+    parent_frame: map
     pose:
       orientation:
         w: 1.0
@@ -294,25 +678,337 @@
         y: 0.0
         z: 0.0
       position:
-        x: 7.5
-        y: 2.5
+        x: 11.0
+        y: -3.0
         z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
     verts:
-    - x: 0.689999997616
-      y: 0.287000000477
-    - x: 0.287000000477
-      y: 0.689999997616
-    - x: -0.287000000477
-      y: 0.689999997616
-    - x: -0.689999997616
-      y: 0.287000000477
-    - x: -0.689999997616
-      y: -0.287000000477
-    - x: -0.287000000477
-      y: -0.689999997616
-    - x: 0.287000000477
-      y: -0.689999997616
-    - x: 0.689999997616
-      y: -0.287000000477
-    xy_goal_tolerance: 0.3
-    yaw_goal_tolerance: 0.2
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint6
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint6_WayPoint4
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint4
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint6_WayPoint7
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint7
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint6_WayPoint8
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint8
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint6
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: -11.0
+        y: 0.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint7
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint7_WayPoint5
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint5
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint7_WayPoint6
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint6
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint7_WayPoint9
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint9
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint7
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: 11.0
+        y: 0.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint8
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint8_WayPoint6
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint6
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint8_WayPoint9
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint9
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint8_WayPoint10
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint10
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint8
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: -11.0
+        y: 3.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+- meta:
+    map: test
+    node: WayPoint9
+    pointset: test
+  node:
+    edges:
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint9_WayPoint7
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint7
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint9_WayPoint8
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint8
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    - action: move_base
+      action_type: move_base_msgs/MoveBaseGoal
+      config: *id001
+      edge_id: WayPoint9_WayPoint11
+      fail_policy: fail
+      fluid_navigation: true
+      goal: *id002
+      node: WayPoint11
+      recovery_behaviours_config: ''
+      restrictions_planning: 'True'
+      restrictions_runtime: 'True'
+    localise_by_topic: ''
+    name: WayPoint9
+    parent_frame: map
+    pose:
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: 11.0
+        y: 3.0
+        z: 0.0
+    properties:
+      xy_goal_tolerance: 0.3
+      yaw_goal_tolerance: 0.1
+    restrictions_planning: 'True'
+    restrictions_runtime: 'True'
+    verts:
+    - x: 0.692909649383465
+      y: 0.2870125742738173
+    - x: 0.2870125742738174
+      y: 0.692909649383465
+    - x: -0.2870125742738173
+      y: 0.692909649383465
+    - x: -0.692909649383465
+      y: 0.28701257427381743
+    - x: -0.6929096493834651
+      y: -0.28701257427381727
+    - x: -0.28701257427381777
+      y: -0.6929096493834649
+    - x: 0.2870125742738169
+      y: -0.6929096493834652
+    - x: 0.6929096493834649
+      y: -0.28701257427381777
+pointset: test
+transformation:
+  child: topo_map
+  parent: map
+  rotation:
+    w: 1.0
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  translation:
+    x: 0.0
+    y: 0.0
+    z: 0.0

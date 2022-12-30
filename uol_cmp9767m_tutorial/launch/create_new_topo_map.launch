@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="db_path" default="$(optenv HOME)/mongodb" />
-  <arg name="tmap" />
+  <arg name="tmap" default="$(find uol_cmp9767m_tutorial)/maps/test.tmap2"/>
   <arg name="robot_name" default="thorvald_001" />
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
   <arg name="pointset" default="$(arg tmap)" />

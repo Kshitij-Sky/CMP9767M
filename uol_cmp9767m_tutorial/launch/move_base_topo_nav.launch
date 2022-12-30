@@ -4,11 +4,13 @@
 
   <arg name="robot_name" default="thorvald_001"/>
   <arg name="tf_prefix" default="$(arg robot_name)/"/>
-  <arg name="map_file" default="$(find uol_cmp9767m_base)maps/cropped.yaml"/>
+  <arg name="map_file" default="$(find uol_cmp9767m_tutorial)/maps/test.tmap2"/>
+
+  <node pkg="topological_navigation" type="map_manager2.py" name="topological_map_manager" args="$(arg map_file)" respawn="true"/>
 
   <!-- map server -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
-
+  
   <group ns="$(arg robot_name)">
     <remap from="map" to="/map" />
     <!-- localization -->
@@ -45,6 +47,11 @@
       <rosparam param="global_costmap/global_obstacle_layer/laser_scan_sensor/topic" subst_value="True">scan</rosparam>
 
     </node>
-
+    
+    <node pkg="topological_navigation" type="visualise_map.py" name="visualise_map" respawn="true">
+      <remap from="topological_map_2" to="/topological_map_2"/>
+      <remap from="topological_map" to="/topological_map"/>
+      <remap from="/topological_navigation/Route" to="topological_navigation/Route"/>
+    </node>
   </group>
 </launch>
